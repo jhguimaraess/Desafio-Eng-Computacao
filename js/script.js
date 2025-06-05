@@ -1,13 +1,10 @@
-/**
- * Script para o desafio de código de Huffman
- */
 
 function checkMorseAnswer() {
     const answerInput = document.getElementById('morse-answer');
     const feedback = document.getElementById('morse-feedback');
 
     const answer = answerInput.value.trim().toLowerCase();
-    const correct = "codifique seu mundo: icea";
+    const correct = "codifique suas ideias";
 
     if (!answer) {
         feedback.textContent = "Digite uma resposta antes de verificar!";
@@ -17,10 +14,15 @@ function checkMorseAnswer() {
     }
 
     const normalize = text =>
-        text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").replace(/\s+/g, " ");
+        text.normalize("NFD")
+            .replace(/\p{Diacritic}/gu, "")
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
 
     if (normalize(answer) === normalize(correct)) {
-        feedback.textContent = "Correto! Avançando para o próximo desafio...";
+        feedback.textContent = "Parabéns, está correto!";
         feedback.className = "feedback success";
         feedback.style.display = "block";
 
