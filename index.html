@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Engenharia de Computação - UFOP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="img/logo-ufop.png" alt="Logo UFOP" class="logo">
+                <div>
+                    <h1>Desafio Engenharia de Computação</h1>
+                    <p>Universidade Federal de Ouro Preto - UFOP</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="morse-challenge" class="challenge-container">
+            <h2>Decodifique o Futuro</h2>
+            <p>Bem-vindo ao desafio da Engenharia de Computação! Decodifique a mensagem em código de Huffman abaixo para avançar para o próximo nível.</p>
+            
+            <div class="morse-code">
+                1011 1101 1100 011 11110 011 0001 100 010 001 1010 010 100 001 11111 100 0000 1100 1101 11100 001 011 1011 010 11101
+            </div>
+            
+            <div class="form-group">
+                <label for="morse-answer">Sua resposta:</label>
+                <input type="text" id="morse-answer" placeholder="Digite a mensagem decodificada...">
+            </div>
+            
+            <div>
+                <button onclick="checkMorseAnswer()">Verificar</button>
+                <button class="help-btn" onclick="toggleMorseHelp()">Tabela de Referência</button>
+            </div>
+            
+            <div id="morse-feedback" class="feedback"></div>
+            
+            <table id="morse-table" class="morse-table">
+                <tr>
+                    <th colspan="2">Tabela de Referência - Código de Huffman</th>
+                </tr>
+                <tr>
+                    <td>a: 11101</td>
+                    <td>c: 1011</td>
+                </tr>
+                <tr>
+                    <td>e: <span class="blank-code"></span></td>
+                    <td>q: 0001</td>
+                </tr>
+                <tr>
+                    <td>d: 1100</td>
+                    <td>f: 11110</td>
+                </tr>
+                <tr>
+                    <td>m: 11111</td>
+                    <td>n: 0000</td>
+                </tr>
+                <tr>
+                    <td>o: 1101</td>
+                    <td>i: <span class="blank-code"></span></td>
+                </tr>
+                <tr>
+                    <td>s: 1010</td>
+                    <td>u: 100</td>
+                </tr>
+                <tr>
+                    <td>espaço: 001</td>
+                    <td>dois-pontos (":") : 11100</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="final-result" class="challenge-container hidden">
+            <div class="result">
+                <h2>Parabéns!</h2>
+                <p>Você fez a escolha certa e completou com sucesso o desafio da Engenharia de Computação!</p>
+                <p>Apresente o código abaixo no nosso estande para receber sua recompensa:</p>
+                <div class="code" id="unique-code">ALGORITMO25</div>
+                <p>Esperamos ver você em breve no curso de Engenharia de Computação da UFOP!</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Engenharia de Computação - ICEA - UFOP</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
