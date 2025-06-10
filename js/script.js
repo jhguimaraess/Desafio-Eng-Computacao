@@ -18,9 +18,10 @@ function checkMorseAnswer() {
     const hashEntrada = CryptoJS.MD5(entradaNormalizada).toString();
 
 
-    const hashCorreto = "9a334330941d0051d5b25848c651b6f4";
+    const hashCorreto1 = "c702724dcff79a13c66fffeee7e7e621";
+    const hashCorreto2 = "876577d550b2b144399c1bab7ecc6dc3";
 
-    if (hashEntrada === hashCorreto) {
+    if (hashEntrada === hashCorreto1 || hashEntrada === hashCorreto2) {
         feedback.textContent = "Parabéns, está correto!";
         feedback.className = "feedback success";
         feedback.style.display = "block";
